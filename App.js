@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 //const API = 'https://hn.algolia.com/api/v1/search?query=';
-const API = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=speed&api-key=WVICcXJihODRENAK1SggWsXqtKEXkodf'
-//const DEFAULT_QUERY = 'javascript';
+const API = 'https://api.nytimes.com/svc/movies/v2/reviews/search.json?query=';
+let QUERY = window.prompt("movie name");
+const KEY = '&api-key=WVICcXJihODRENAK1SggWsXqtKEXkodf';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +12,7 @@ class App extends Component {
     };
   }
   componentDidMount() {
-    fetch(API) //+ DEFAULT_QUERY)
+    fetch(API+QUERY+KEY) //+ DEFAULT_QUERY)
       .then(response => response.json())
       .then(data => this.setState({ results: data.results }));
   }

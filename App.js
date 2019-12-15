@@ -21,10 +21,9 @@ class App extends Component {
     return (
       <ul>
         {results.map(result =>
-          <li>
-            <a href={result.link.url}>{result.display_title}</a>
-
-          </li>
+          <ul>
+            <li><a href={result.link.url}>{result.display_title}</a></li>
+          </ul>
         )}
       </ul>
     );

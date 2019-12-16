@@ -19,13 +19,11 @@ class App extends Component {
   render() {
     const { results } = this.state;
     return (
-      <ul>
         {results.map(result =>
           <ul>
             <li><a href={result.link.url}>{result.display_title}</a></li>
           </ul>
         )}
-      </ul>
     );
   }
 }
